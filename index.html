@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRHAMIDOV JAVLON</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080d1b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: radial-gradient(circle at top, #142b52, #080d1b 65%);
+}
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #10182b;
+}
+
+.logo {
+    color: #38bdf8;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 75px);
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+.hero h1 {
+    animation: chiqish 2s ease;
+}
+
+@keyframes chiqish {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero p {
+    font-size: 20px;
+    color: #cbd5e1;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #0284c7, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px #0284c7;
+}
+
+.btn:hover {
+    transform: scale(1.12) translateY(-5px);
+    box-shadow: 0 0 30px #38bdf8;
+    background: linear-gradient(45deg, #2563eb, #06b6d4);
+}   
+
+.btn:hover {
+    transform: scale(1.1);
+}
+.btn:hover {
+    background: #0369a1;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+.profile {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    display: block;
+    margin: 30px auto 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MJ.</div>
+    <nav>
+        <a href="#">Bosh sahifa</a>
+        <a href="#about">Men haqimda</a>
+    </nav>
+</header>
+<img src="javlon.jpg.jpg" class="profile">
+<section class="hero">
+    <h1>MIRHAMIDOV JAVLON</h1>
+    <p>Welcome to my personal website</p>
+    <div id="soat" style="font-size:25px; color:#38bdf8; margin-top:20px;">
+        
+</div>
+<div id="sana" style="font-size:18px; color:#cbd5e1; margin-top:10px;">
+</div>
+    <button class="btn" onclick="alert('Xush kelibsiz!')">
+        Men haqimda
+    </button>
+<section style="text-align:center; padding:60px 20px;">
+    <h2>MEN HAQIMDA</h2>
+    <p style="margin-top:20px; color:#cbd5e1;">
+        Salom! Men Mirhamidov Javlon.
+        Shaxsiy sahifamga xush kelibsiz!
+    </p>
+
+    <div style="margin-top:30px;">
+        <a href="https://www.instagram.com/m1rham1dov_shoh/" target="_blank" style="color:#38bdf8; margin:10px;">Instagram</a>
+        <a href="https://t.me/m1rham1dov_7" target="_blank" style="color:#38bdf8; margin:10px;">Telegram</a>
+    </div>
+</section>
+<section style="text-align:center; padding:50px 20px;">
+    <h2 style="color:#38bdf8;">QIZIQISHLARIM</h2>
+
+    <p style="margin-top:25px;">⚽ Futbol</p>
+    <p style="margin-top:15px;">🎮 Kompyuter o‘yinlari</p>
+    <p style="margin-top:15px;">💻 Dasturlash</p>
+    <p style="margin-top:15px;">🎧 Musiqa</p>
+</section>
+<footer id="about">
+    © 2026 Mirhamidov Javlon
+</footer>
+<script>
+function soatniYangila() {
+    let vaqt = new Date();
+    document.getElementById("soat").innerHTML =
+        vaqt.toLocaleTimeString("uz-UZ");
+}
+document.getElementById("sana").innerHTML =
+    new Date().toLocaleDateString("uz-UZ");
+setInterval(soatniYangila, 1000);
+soatniYangila();
+</script>
+<audio id="music" loop>
+    <source src="taweel al shawq.m4a" type="audio/mp4">
+</audio>
+
+<button class="btn" onclick="document.getElementById('music').play()">
+    ▶ Musiqani yoqish
+</button>
+<button class="btn" onclick="
+    let m = document.getElementById('music');
+    if (m.paused) {
+        m.play();
+        this.innerText = '⏸ Musiqani to‘xtatish';
+    } else {
+        m.pause();
+        this.innerText = '▶ Musiqani yoqish';
+    }
+">
+    ▶ Musiqani yoqish
+</button>
+<div id="cursor-light"></div>
+
+<style>
+#cursor-light {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: #00ccff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00ccff, 0 0 35px #00ccff;
+    pointer-events: none;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    display: none;
+}
+</style>
+
+<script>
+const light = document.getElementById("cursor-light");
+
+document.addEventListener("mousemove", function(event) {
+    light.style.display = "block";
+    light.style.left = event.clientX + "px";
+    light.style.top = event.clientY + "px";
+});
+</script>
+</body>
+</html>
